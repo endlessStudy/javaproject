@@ -1,0 +1,13 @@
+# application.yaml
+# Server settings (ServerProperties)
+server:
+  port: 8085
+  address: 127.0.0.1
+  sessionTimeout: 30
+  contextPath: /boot
+tomcat:
+    accessLogEnabled: false
+    protocolHeader: x-forwarded-proto
+    remoteIpHeader: x-forwarded-for
+    basedir:
+    backgroundProcessorDelay: 30 # secs
