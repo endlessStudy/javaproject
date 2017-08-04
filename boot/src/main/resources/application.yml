@@ -15,7 +15,7 @@ tomcat:
 
 spring:
   datasource:
-    url: jdbc:mysql://localhost/test
+    url: jdbc:mysql://localhost/zblog
     username: root
     password: root
     driver-class: com.mysql.jdbc.Driver
