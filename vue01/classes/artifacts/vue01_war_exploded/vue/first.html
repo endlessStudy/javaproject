@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    
+    <title>vue.js</title>
+	<meta charset="utf-8">
+    <meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+    <meta http-equiv="description" content="this is my page">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    
+    <!--<link rel="stylesheet" type="text/css" href="./styles.css">-->
+  </head>
+  
+  <body>
+	<div id="example">
+		<p>{{message}}</p>
+		<input type="text" v-model="message">
+	</div>
+  </body>
+  <script src="../js/vue.js"></script>
+  <script>
+  	var exampleData = {
+  			message:"Hello World!"
+  	}
+  	new Vue({
+  		el:"#example",
+  		data:exampleData
+  	});
+  </script>
+</html>

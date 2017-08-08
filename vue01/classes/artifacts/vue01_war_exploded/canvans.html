@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>canvans.html</title>
+
+<meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+<meta http-equiv="description" content="this is my page">
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+<!--<link rel="stylesheet" type="text/css" href="./styles.css">-->
+<script type="text/javascript" src="sy/scripts/jQuery%20v1.11.1.min.js"></script>
+<script>
+	var arr = new Array();
+	var transImage = function() {
+	var divContent  = document.getElementById("start").innerHTML;
+	 var data = "data:image/svg+xml," +  
+    "<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'>" +  
+    "<foreignObject width='100%' height='100%'>" +  
+    "<div xmlns='http://www.w3.org/1999/xhtml' style='font-size:16px;font-family:Helvetica'>" +  
+    divContent +  
+    "</div>" +  
+    "</foreignObject>" +  
+    "</svg>"; 
+    var img = new Image();  
+    img.src = data;  
+    
+	
+    document.getElementsByTagName('body')[0].appendChild(img);  
+	/* 	var c = document.createElement("CANVAS");
+		c = s;
+		var ctx = c.getContext("2d");
+		arr.push(c.toDataURL()); */
+	}
+	$(function() {
+		$("#btn").click(function() {
+			$.ajax({
+				type : "post",
+				url : porjectName+"/ladjzd/img",
+				data : "img="+img,
+				dataType : 'json',
+				async:false,
+				success : function(data) {
+					alert(1);
+				}
+			});
+			/* transImage(); */
+		/* 	$.ajax({
+				type : "post",
+				url : 'zt/img.do',
+				dataType : "json",
+				data : {},
+				async : false,
+				success : function(data) {
+					alert(1);
+				}
+			}); */
+		});
+	});
+</script>
+</head>
+
+<body>
+	<input type="button" id="btn" value="按钮">
+	<div id="start">
+		<div>123456</div>
+		<div>1234789</div>
+	</div>
+</body>
+</html>

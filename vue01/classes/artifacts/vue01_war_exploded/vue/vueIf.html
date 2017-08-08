@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>vueIf.html</title>
+	
+    <meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+    <meta http-equiv="description" content="this is my page">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    
+    <!--<link rel="stylesheet" type="text/css" href="./styles.css">-->
+
+  </head>
+  
+  <body>
+	  <div id="app">
+            <h1>Hello, Vue.js!</h1>
+            <h1 v-if="yes">Yes!</h1>
+            <h1 v-if="no">No!</h1>
+            <h1 v-if="age >= 25">Age: {{ age }}</h1>
+            <h1 v-if="name.indexOf('jack') >= 0">Name: {{ name }}</h1>
+        </div>
+        <div id="bind">
+        	<span v-bind:title="message">
+        		鼠标悬停几秒钟查看此处动态绑定的提示信息！
+        	</span>
+        </div>
+  </body>
+  <script src="../js/vue.js"></script>
+  <script>
+	var vm = new Vue({
+      el: "#app",
+      data: {
+    	  yes: true,
+          no: false,
+          age: 28,
+          name: 'keepfool'
+      }
+  },
+  {
+		el:"#bind",
+		data:{
+			message:"页面加载于"+new Date()
+		}
+	})
+ 
+  </script>
+</html>
