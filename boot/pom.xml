@@ -4,13 +4,17 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.liuyl</groupId>
 	<artifactId>boot</artifactId>
+	<packaging>pom</packaging>
 	<version>0.0.1-SNAPSHOT</version>
+	<modules>
+		<module>../oa</module>
+	</modules>
 
 
 	<!-- 文件编码方式 -->
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<java.version>1.8</java.version>
+		<java.version>1.7</java.version>
 	</properties>
 	<parent>
 		<groupId>org.springframework.boot</groupId>
