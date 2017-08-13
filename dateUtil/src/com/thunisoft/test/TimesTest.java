@@ -7,7 +7,6 @@ import java.util.TimerTask;
 
 import org.junit.Test;
 
-import com.sun.org.apache.bcel.internal.generic.NEW;
 
 public class TimesTest {
 	static int index = 0;
@@ -27,9 +26,9 @@ public class TimesTest {
 		 * scheduleAtFixedRate(TimerTask task, long delay, long period)指定的任务在指定的延迟后开始进行重复的固定速率执行。
 		 */
 //		timer0();
-		timer1();
+//		timer1();
 //		timer2();
-//		timer3();
+		timer3();
 //		timer4();
 		
 	}
@@ -122,41 +121,4 @@ public class TimesTest {
 	      }
 	    }, time, 2000);// 这里设定将延时每天固定执行
 	  }
-
-	@Test
-	public void threadTest(){
-	        // run in a second  
-	        final long timeInterval = 1000;  
-	        Runnable runnable = new Runnable() {  
-	            public void run() {  
-	                while (true) {  
-	                    // ------- code for task to run  
-	                    System.out.println("Hello !!");  
-	                    // ------- ends here  
-	                    try {  
-	                        Thread.sleep(1000);
-	                        System.out.println("world");
-	                    } catch (InterruptedException e) {
-	                    	System.out.println(e.getMessage());
-	                        e.printStackTrace();  
-	                    }  
-	                }  
-	            }  
-	        };  
-	        Thread thread = new Thread(runnable);  
-	        thread.start();  
-	    }  
-	
-	@Test
-	public void timerTest(){
-		Timer timer = new Timer();
-		timer.schedule(new TimerTask() {
-			@Override
-			public void run() {
-				// TODO Auto-generated method stub
-				System.out.println("Timer定时任务!"+new Date());
-			}
-		}, 2000);
-		timer.cancel();
-	}
 }

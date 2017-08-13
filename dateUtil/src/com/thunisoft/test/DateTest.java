@@ -16,5 +16,7 @@ public class DateTest {
 		 * toString
 		 */
 		Date dateLong = new Date();
+		System.out.println(date.getTime());
+		System.out.println(dateLong);
 	}
 }
