@@ -1,0 +1,49 @@
+{
+
+  "query": {
+    "filtered": {
+      "filter": {
+        "bool": {
+          "must": [
+            {
+              "term": {
+                "QW.WS.AJLX.@value": "民事一审案件"
+              }
+            },
+
+            {
+              "term": {
+                "QW.WS.WSZL.@value": "判决书"
+              }
+            },
+            {
+              "range": {
+                "QW.WW.CPSJ.JAND.@value": {
+                  "gte": "2012",
+                  "lte": "2016"
+                }
+              }
+            }
+          ],
+          "should": [
+            {
+              "terms": {
+                "QW.SSJL.AY.@value": [
+                  "机动车交通事故责任纠纷"
+                ]
+              }
+            }
+          ]
+        }
+      }
+    }
+  },
+  "_source": {
+    "includes": [
+      "QW.WW.CPSJ.JAND.@value",
+      "QW.WS.JBFY.XZQH_P.@value",
+      "QW.AJJBQK.@value",
+      "QW.AJJBQK.CMSSD.@value"
+    ]
+  }
+}

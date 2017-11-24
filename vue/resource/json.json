@@ -1,0 +1,116 @@
+{
+	"buckets": [
+		{
+			"key": "浙江",
+			"doc_count": 4766
+		},
+		{
+			"key": "河北",
+			"doc_count": 2515
+		},
+		{
+			"key": "山东",
+			"doc_count": 1574
+		},
+		{
+			"key": "四川",
+			"doc_count": 1463
+		},
+		{
+			"key": "陕西",
+			"doc_count": 1163
+		},
+		{
+			"key": "安徽",
+			"doc_count": 1096
+		},
+		{
+			"key": "河南",
+			"doc_count": 933
+		},
+		{
+			"key": "广西",
+			"doc_count": 759
+		},
+		{
+			"key": "江苏",
+			"doc_count": 626
+		},
+		{
+			"key": "广东",
+			"doc_count": 443
+		},
+		{
+			"key": "辽宁",
+			"doc_count": 151
+		},
+		{
+			"key": "甘肃",
+			"doc_count": 99
+		},
+		{
+			"key": "吉林",
+			"doc_count": 73
+		},
+		{
+			"key": "湖北",
+			"doc_count": 57
+		},
+		{
+			"key": "山西",
+			"doc_count": 48
+		},
+		{
+			"key": "重庆",
+			"doc_count": 33
+		},
+		{
+			"key": "北京",
+			"doc_count": 19
+		},
+		{
+			"key": "福建",
+			"doc_count": 18
+		},
+		{
+			"key": "新疆",
+			"doc_count": 15
+		},
+		{
+			"key": "内蒙古",
+			"doc_count": 6
+		},
+		{
+			"key": "湖南",
+			"doc_count": 5
+		},
+		{
+			"key": "上海",
+			"doc_count": 3
+		},
+		{
+			"key": "云南",
+			"doc_count": 3
+		},
+		{
+			"key": "贵州",
+			"doc_count": 3
+		},
+		{
+			"key": "海南",
+			"doc_count": 2
+		},
+		{
+			"key": "宁夏",
+			"doc_count": 1
+		},
+		{
+			"key": "江西",
+			"doc_count": 1
+		},
+		{
+			"key": "黑龙江",
+			"doc_count": 1
+		}
+	]
+}

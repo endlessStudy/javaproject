@@ -1,0 +1,6 @@
+.table-striped > tbody > tr:nth-of-type(odd) {
+    background-color: #bebebe !important;
+}
+.table-striped > tbody>tr:first-child {
+    background-color: #96B96B !important;
+}

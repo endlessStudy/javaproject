@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:amq="http://activemq.apache.org/schema/core"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd http://activemq.apache.org/schema/core http://activemq.apache.org/schema/core/activemq-core.xsd">
+    <context:component-scan base-package="com.liuyl.aop"/>
+    <!-- 定义消息队列（Queue） -->
+  <!--  <bean id="demoQueueDestination1" class="org.apache.activemq.command.ActiveMQQueue">
+        &lt;!&ndash; 设置消息队列的名字 &ndash;&gt;
+        <constructor-arg index="0">
+            <value>first-queue</value>
+        </constructor-arg>
+    </bean>-->
+    <amq:queue id="demoQueueDestination" physicalName="spittle.alert.queue" ></amq:queue>
+    <!-- 定义JmsTemplate的Topic类型 -->
+    <amq:topic id="demoTopic" physicalName="spittle.alert.topic"></amq:topic>
+ <!-- <bean id="jmsTopicTemplate" class="org.springframework.jms.core.JmsTemplate">
+      &lt;!&ndash; 这个connectionFactory对应的是我们定义的Spring提供的那个ConnectionFactory对象 &ndash;&gt;
+            <constructor-arg ref="connectionFactory" />
+            &lt;!&ndash; pub/sub模型（发布/订阅） &ndash;&gt;
+            <property name="pubSubDomain" value="true" />
+        </bean>-->
+    <!-- activeMq -->
+    <amq:connectionFactory id="amqConnectionFactroy" brokerURL="tcp://47.93.42.101:61616" userName="admin" password="admin" />
+    <bean id="connectionFactory" class="org.springframework.jms.connection.CachingConnectionFactory">
+        <property name="targetConnectionFactory" ref="amqConnectionFactroy" ></property>
+        <property name="sessionCacheSize" value="20"></property>
+    </bean>
+    <!-- Spring JmsTemplate 的消息生产者 start-->
+    <bean id="jmsTemplate" class="org.springframework.jms.core.JmsTemplate">
+        <constructor-arg name="connectionFactory" ref="connectionFactory"/>
+        <property name="pubSubDomain" value="false"></property>
+        <property name="sessionTransacted" value="true"/>
+        <property name="defaultDestination" ref="demoQueueDestination"></property>
+        <!--<property name="defaultDestinationName" value="first-queue"></property>-->
+    </bean>
+<!--     定义JmsTemplate的Topic类型
+    <bean id="jmsTopicTemplate" class="org.springframework.jms.core.JmsTemplate">
+        &lt;!&ndash; 这个connectionFactory对应的是我们定义的Spring提供的那个ConnectionFactory对象 &ndash;&gt;
+        <constructor-arg ref="connectionFactory" />
+        &lt;!&ndash; pub/sub模型（发布/订阅） &ndash;&gt;
+        <property name="pubSubDomain" value="true" />
+    </bean>-->
+    <bean id="queueMessageListenr" class="com.liuyl.listen.QueueMessageListener"/>
+    <bean id="queueListenerContainer" class="org.springframework.jms.listener.DefaultMessageListenerContainer">
+        <property name="connectionFactory" ref="connectionFactory"></property>
+        <property name="destination" ref="demoQueueDestination"></property>
+        <property name="messageListener" ref="queueMessageListenr"></property>
+    </bean>
+
+
+
+
+
+
+</beans>

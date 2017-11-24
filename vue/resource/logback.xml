@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration scan="true" scanPeriod="10 seconds" debug="true">
+	<appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+		<file>d:/log.log</file>
+		<encoder>
+			<pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36}.%M %line - %msg%n
+			</pattern>
+			<!--%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36}.%M %line - %msg%n-->
+			<!--%d{yyyy-MM-dd HH:mm:ss,SSS} %5p [%t] %caller{1} - %m%n-->
+			<!-- 17:59:37.788 [main] DEBUG cn.com.smile.LogbackDemo - ======debug -->
+		</encoder>
+	</appender>
+	<!-- additivity 日志是否与上级叠加 -->
+	<logger name="com.liuyl" level="info">
+		<appender-ref ref="STDOUT"/>
+	</logger>
+	<root level="info">
+		<appender-ref ref="STDOUT"/>
+	</root>
+</configuration>

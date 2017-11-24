@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.liuyl.dao.UserDao">
+    <resultMap id="userMap" type="com.liuyl.pojo.User">
+        <id column="id" property="id"></id>
+        <result column="username" property="username"></result>
+        <result column="password" property="password"></result>
+        <result column="enabled" property="enabled"></result>
+        <result column="credential" property="credential"></result>
+        <result column="locked" property="locked"></result>
+        <result column="expired" property="expired"></result>
+        <result column="createTime" property="createTime"></result>
+    </resultMap>
+    <select id="queryUser" resultMap="userMap">
+      SELECT id, username, password, enabled, credential, locked, expired, createTime FROM zblog.user
+    </select>
+    <select id="queryUserByName" parameterType="String" resultType="com.liuyl.pojo.User">
+        SELECT id, username, password, enabled, credential, locked, expired, createTime FROM zblog.user
+        WHERE  username = #{username};
+    </select>
+</mapper>
