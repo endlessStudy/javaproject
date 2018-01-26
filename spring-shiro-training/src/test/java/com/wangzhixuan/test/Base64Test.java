@@ -12,7 +12,7 @@ public class Base64Test {
      * Shiro 记住密码采用的是AES加密，AES key length 需要是16位，该方法生成16位的key
      */
     public static void main(String[] args) {
-        String keyStr = "如梦技术";
+        String keyStr = "飘渺舞步";
         
         byte[] keys = keyStr.getBytes(Charsets.UTF_8);
         

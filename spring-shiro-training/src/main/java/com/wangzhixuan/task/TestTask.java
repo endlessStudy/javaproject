@@ -26,7 +26,7 @@ public class TestTask {
 	@Autowired private TestService testService;
 //	@Autowired private RedisTemplate<String, Object> redisTemplate;
 	
-	@Scheduled(cron = "0 5/20 * * * ?")
+	@Scheduled(cron = "0/20 * * * * ?")
 	public void cronTest() {
 		// 测试手动存储cache
 		Cache cache = cacheManager.getCache("hour");

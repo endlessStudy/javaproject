@@ -56,7 +56,10 @@ public class PageInfo {
         this.size = this.pagesize;
     }
 
-    // 构造方法
+    /**
+     *
+     * 构造方法
+     **/
     public PageInfo(int nowpage, int pagesize, String sort, String order) {
         this(nowpage, pagesize) ;
         // 排序字段，正序还是反序

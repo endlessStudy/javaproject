@@ -16,6 +16,7 @@ public class TestService {
 	
     @Cacheable(value = "hour", key = "#id")
 	public User selectById(Serializable id) {
-		return userMapper.selectById(id);
+        System.out.println("缓存用户名密码成功。。。。。。。");
+        return userMapper.selectById(id);
 	}
 }

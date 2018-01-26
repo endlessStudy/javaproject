@@ -3,9 +3,9 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>用户登录-如梦技术IT-专业的java学习培训平台</title>
-    <meta name="keywords" content="如梦技术,java职业教育,java线教育平台,java在线学习,spring,mybatis,spring-boot,docker">
-    <meta name="description" content="如梦技术作为中国最权威的java在线教育平台,拥有海量高清java职业课程,涵盖个个组件,根据java在线学习特点,如梦技术推出java学习知识体系图,java职业学习实战路径图,帮助java学习者从零基础起步,结合java实战案例演练,系统学习,助你快速成为java优秀技术人才！">
+    <title>用户登录-飘渺舞步IT-专业的java学习培训平台</title>
+    <meta name="keywords" content="飘渺舞步,java职业教育,java线教育平台,java在线学习,spring,mybatis,spring-boot,docker">
+    <meta name="description" content="飘渺舞步作为中国最权威的java在线教育平台,拥有海量高清java职业课程,涵盖个个组件,根据java在线学习特点,飘渺舞步推出java学习知识体系图,java职业学习实战路径图,帮助java学习者从零基础起步,结合java实战案例演练,系统学习,助你快速成为java优秀技术人才！">
     <meta name="viewport" content="width=device-width">
     <%@ include file="/commons/basejs.jsp" %>
     <link rel="stylesheet" type="text/css" href="${staticPath }/static/style/css/login.css?v=201612202107" />
@@ -51,7 +51,7 @@
 </div>
 <div style="text-align:center;">
     <p>
-        <a href="http://www.dreamlu.net/" target="_blank">如梦技术</a>
+        <a href="http://www.dreamlu.net/" target="_blank">飘渺舞步</a>
         <script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1256912241'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s4.cnzz.com/stat.php%3Fid%3D1256912241%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));</script>
     </p>
 </div>
