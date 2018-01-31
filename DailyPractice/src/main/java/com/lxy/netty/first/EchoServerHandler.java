@@ -17,6 +17,7 @@ import io.netty.util.concurrent.EventExecutorGroup;
  * @date 2018/1/15
  */
 public class EchoServerHandler extends ChannelInboundHandlerAdapter {
+
     @Override
     public void channelActive(ChannelHandlerContext ctx) throws Exception {
         System.out.println("channel Active!");
@@ -24,6 +25,8 @@ public class EchoServerHandler extends ChannelInboundHandlerAdapter {
 
     @Override
     public void channelRead(ChannelHandlerContext ctx, Object msg) throws Exception {
+        //返回和这个实例相关联的Channel所配置的ByteBufAlloactor
+        //ctx.alloc();
         ByteBuf in = (ByteBuf) msg;
         System.out.println(  "Server received: " + in.toString(CharsetUtil.UTF_8));
         ctx.write(in);

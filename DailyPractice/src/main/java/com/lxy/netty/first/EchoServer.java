@@ -1,10 +1,7 @@
 package com.lxy.netty.first;
 
 import io.netty.bootstrap.ServerBootstrap;
-import io.netty.channel.Channel;
-import io.netty.channel.ChannelFuture;
-import io.netty.channel.ChannelInitializer;
-import io.netty.channel.EventLoopGroup;
+import io.netty.channel.*;
 import io.netty.channel.nio.NioEventLoopGroup;
 import io.netty.channel.socket.nio.NioServerSocketChannel;
 
@@ -35,6 +32,7 @@ public class EchoServer {
                         channel.pipeline().addLast(new EchoServerHandler());
                     }
                 });
+
             ChannelFuture f = serverBootstrap.bind().sync();
             System.out.println(EchoServer.class.getName() + " started and listening for connections on " + f.channel().localAddress());
             f.channel().closeFuture().sync();
