@@ -4,6 +4,7 @@ import com.sun.security.ntlm.Server;
 import io.netty.bootstrap.Bootstrap;
 import io.netty.bootstrap.ServerBootstrap;
 import io.netty.channel.ChannelFuture;
+import io.netty.channel.ChannelFutureListener;
 import io.netty.channel.ChannelInitializer;
 import io.netty.channel.EventLoopGroup;
 import io.netty.channel.nio.NioEventLoop;
@@ -21,7 +22,6 @@ import java.nio.channels.SelectionKey;
 public class EchoClient {
     private final String host;
     private final int port;
-
     public EchoClient(String host, int port) {
         this.host = host;
         this.port = port;
@@ -41,6 +41,17 @@ public class EchoClient {
                 }
             });
             ChannelFuture channelFuture = bootstrap.connect().sync();
+            channelFuture.addListener(new ChannelFutureListener() {
+                @Override
+                public void operationComplete(ChannelFuture channelFuture) throws Exception {
+                    if (channelFuture.isSuccess()){
+                        System.out.println("Connection eatablished!");
+                    }else {
+                        System.err.println("Connection attempt failed!");
+                        channelFuture.cause().printStackTrace();
+                    }
+                }
+            });
             channelFuture.channel().closeFuture().sync();
         } finally {
             eventLoopGroup.shutdownGracefully().sync();

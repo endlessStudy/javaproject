@@ -21,6 +21,7 @@ public class EchoClientHandler extends SimpleChannelInboundHandler<ByteBuf> {
     @Override
     public void channelUnregistered(ChannelHandlerContext ctx) throws Exception {
         logger.info("Unregistered ： channel已被创建，但还未注册到EventLoop！" + "^_^ !");
+
     }
 
     @Override
@@ -46,6 +47,11 @@ public class EchoClientHandler extends SimpleChannelInboundHandler<ByteBuf> {
 
     @Override
     protected void channelRead0(ChannelHandlerContext channelHandlerContext, ByteBuf o) throws Exception {
+        //o.capacity()
+        byte[] byteArray = new byte[o.readableBytes()];
+        o.readBytes(byteArray);
+        String result = new String(byteArray,"UTF-8");
+        System.out.println(result);
         logger.info("Client: " + new String(o.toString().getBytes(), "utf-8"));
         logger.info("Client received : " + ByteBufUtil.hexDump(o.readBytes(o.readableBytes())));
     }

@@ -39,5 +39,7 @@
     <orderEntry type="library" name="Maven: io.netty:netty:3.7.0.Final" level="project" />
     <orderEntry type="library" name="Maven: org.apache.commons:commons-io:1.3.2" level="project" />
     <orderEntry type="library" name="Maven: com.rabbitmq:amqp-client:5.0.0" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.commons:commons-lang3:3.6" level="project" />
+    <orderEntry type="library" name="Maven: apache-beanutils:commons-beanutils:1.7.0" level="project" />
   </component>
 </module>
