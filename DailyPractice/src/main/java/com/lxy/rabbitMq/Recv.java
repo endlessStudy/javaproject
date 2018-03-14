@@ -13,10 +13,11 @@ public class Recv {
     public static void main(String[] args) throws IOException, TimeoutException {
         ConnectionFactory connectionFactory = new ConnectionFactory();
         connectionFactory.setHost("172.16.214.53");
+        connectionFactory.setPort(ConnectionFactory.DEFAULT_AMQP_PORT);
         Connection connection = connectionFactory.newConnection();
         Channel channel = connection.createChannel();
         channel.queueDeclare(QUEUE_NAME,false,false,false,null);
-        System.out.println(" [*] Waiting for messages. " + " ^_^ !");
+        System.out.println(" [*] Waiting for messages. " + "");
         Consumer consumer = new DefaultConsumer(channel){
             @Override
             public void handleDelivery(String consumerTag, Envelope envelope, AMQP.BasicProperties properties, byte[] body) throws IOException {
@@ -25,5 +26,6 @@ public class Recv {
             }
         };
         channel.basicConsume(QUEUE_NAME, true, consumer);
+
     }
 }
