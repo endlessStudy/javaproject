@@ -22,11 +22,11 @@ public class EchoServerHandler extends ChannelInboundHandlerAdapter {
     public void channelActive(ChannelHandlerContext ctx) throws Exception {
         System.out.println("channel Active!");
     }
-
     @Override
     public void channelRead(ChannelHandlerContext ctx, Object msg) throws Exception {
         //返回和这个实例相关联的Channel所配置的ByteBufAlloactor
         //ctx.alloc();
+        System.out.println(("channelName: " + msg.getClass().getName()));
         ByteBuf in = (ByteBuf) msg;
         System.out.println(  "Server received: " + in.toString(CharsetUtil.UTF_8));
         ctx.write(in);

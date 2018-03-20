@@ -197,11 +197,6 @@
             <version>1.7.6</version>
         </dependency>
         <dependency>
-            <groupId>com.thunisoft.elasticsearch</groupId>
-            <artifactId>elasticsearch-tool</artifactId>
-            <version>1.7.5</version>
-        </dependency>
-        <dependency>
             <groupId>org.elasticsearch.client</groupId>
             <artifactId>transport</artifactId>
             <version>5.6.3</version>

@@ -3,7 +3,11 @@ package com.lxy.netty.first;
 import io.netty.bootstrap.ServerBootstrap;
 import io.netty.channel.*;
 import io.netty.channel.nio.NioEventLoopGroup;
+import io.netty.channel.socket.SocketChannel;
 import io.netty.channel.socket.nio.NioServerSocketChannel;
+import io.netty.handler.codec.http.HttpObjectAggregator;
+import io.netty.handler.codec.http.HttpRequestDecoder;
+import io.netty.handler.codec.http.HttpResponseDecoder;
 
 import java.lang.reflect.Method;
 
@@ -25,13 +29,19 @@ public class EchoServer {
             serverBootstrap.group(eventLoopGroup).
                 channel(NioServerSocketChannel.class)
                 .localAddress(port)
-                .childHandler(new ChannelInitializer<Channel>() {
+                .childHandler(new ChannelInitializer<SocketChannel>() {//scoketChannel
                     @Override
-                    protected void initChannel(Channel channel) throws Exception {
-                        System.out.println("===========");
-                        channel.pipeline().addLast(new EchoServerHandler());
+                    protected void initChannel(SocketChannel channel) throws Exception {
+                        System.out.println("===========" + channel);
+                        channel.pipeline()
+                            .addLast(new EchoServerHandler())
+                            .addLast(new HttpRequestDecoder())
+                            .addLast(new HttpResponseDecoder())
+                            .addLast(new HttpObjectAggregator(512 * 1024))
+                        ;
                     }
-                });
+                }).option(ChannelOption.SO_BACKLOG, 128) // determining the number of connections queued
+                .childOption(ChannelOption.SO_KEEPALIVE, Boolean.TRUE);
 
             ChannelFuture f = serverBootstrap.bind().sync();
             System.out.println(EchoServer.class.getName() + " started and listening for connections on " + f.channel().localAddress());

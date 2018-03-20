@@ -11,6 +11,9 @@ import io.netty.channel.nio.NioEventLoopGroup;
 import io.netty.channel.socket.SocketChannel;
 import io.netty.channel.socket.nio.NioServerSocketChannel;
 import io.netty.channel.socket.nio.NioSocketChannel;
+import io.netty.handler.codec.http.HttpObjectAggregator;
+import io.netty.handler.codec.http.HttpRequestDecoder;
+import io.netty.handler.codec.http.HttpResponseDecoder;
 
 import java.net.InetSocketAddress;
 import java.nio.channels.SelectionKey;
@@ -36,8 +39,12 @@ public class EchoClient {
                 .handler(new ChannelInitializer<SocketChannel>() {
                 @Override
                 protected void initChannel(SocketChannel socketChannel) throws Exception {
-                    System.out.println("==============>");
-                    socketChannel.pipeline().addLast(new EchoClientHandler());
+                    System.out.println("==============>"+ socketChannel);
+                    socketChannel.pipeline()
+                        .addLast(new EchoClientHandler())
+                        .addLast(new HttpRequestDecoder())
+                        .addLast(new HttpResponseDecoder())
+                        .addLast(new HttpObjectAggregator(512 * 1024));
                 }
             });
             ChannelFuture channelFuture = bootstrap.connect().sync();
