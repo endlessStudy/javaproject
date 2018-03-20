@@ -8,6 +8,5 @@ import java.util.concurrent.locks.Lock;
 public class Ticket {
     public synchronized void test(){
         System.out.println();
-
     }
 }

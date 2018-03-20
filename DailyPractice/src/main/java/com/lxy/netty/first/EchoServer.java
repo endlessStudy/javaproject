@@ -1,18 +1,51 @@
 package com.lxy.netty.first;
 
+import com.sun.deploy.util.ArrayUtil;
 import io.netty.bootstrap.ServerBootstrap;
-import io.netty.channel.*;
+import io.netty.channel.Channel;
+import io.netty.channel.ChannelFuture;
+import io.netty.channel.ChannelInitializer;
+import io.netty.channel.EventLoopGroup;
 import io.netty.channel.nio.NioEventLoopGroup;
-import io.netty.channel.socket.SocketChannel;
 import io.netty.channel.socket.nio.NioServerSocketChannel;
-import io.netty.handler.codec.http.HttpObjectAggregator;
-import io.netty.handler.codec.http.HttpRequestDecoder;
-import io.netty.handler.codec.http.HttpResponseDecoder;
+import org.apache.commons.lang3.ArrayUtils;
 
 import java.lang.reflect.Method;
+import java.util.Arrays;
 
 /**
  * Created by liuyl on 2018/1/15.
+ */
+
+/**
+ *
+ *
+ *
+ *
+ *                   ________________________                                 __________________________
+ *                  |                        |                               |                          |
+ *                  |   <-----Inbound-----   |                               |   ---inbound------- >    |   ________
+ *                  |   _____        ______  |                               |    _______      ____     |  |        |
+ *      _______     |  |     |       |    |  |                               |    |     |     |    |    |  |        |
+ *     |       |    |  |  ②  |       |  ③ | |     ___________________       |    |  ⑤  |     | ⑥ |    |  |        |
+ *     |       |    |  |_____|       |____|  |     |                   |     |    |_____|     |____|    |  |        |
+ *     |client |----|-------______-----------|-----|      network      |-----|--------------------------|--| server |
+ *     |       |    |       |     |          |     |___________________|     |          ______          |  |        |
+ *     |       |    |       |  ①  |          |                               |          |     |         |  |        |
+ *     |       |    |       |_____|          |                               |          |  ④  |         |  |________|
+ *     |       |    |                        |                               |          |_____|         |
+ *     |_______|    |   -----Outbound--->    |                               |    <-----outbound----    |
+ *                  |___ChannelPipeline______|                               |______ChannelPipeline_____|
+ *
+ *  ①：StringEncoder继承于MessageToMessageEncoder，而MessageToMessageEncoder又继承于ChannelOutboundHandlerAdapter
+ *  ②：HelloWorldClientHandler.java
+ *  ③：StringDecoder继承于MessageToMessageDecoder，而MessageToMessageDecoder又继承于ChannelInboundHandlerAdapter
+ *  ④：StringEncoder 编码器
+ *  ⑤：StringDecoder 解码器
+ *  ⑥：HelloWorldServerHandler.java
+ *
+ *
+ *
  */
 public class EchoServer {
     private final int port;
@@ -26,23 +59,16 @@ public class EchoServer {
         try {
             //服务启动程序
             ServerBootstrap serverBootstrap = new ServerBootstrap();
-            serverBootstrap.group(eventLoopGroup).
-                channel(NioServerSocketChannel.class)
+            serverBootstrap.group(eventLoopGroup)
+                .channel(NioServerSocketChannel.class)
                 .localAddress(port)
-                .childHandler(new ChannelInitializer<SocketChannel>() {//scoketChannel
+                .childHandler(new ChannelInitializer<Channel>() {
                     @Override
-                    protected void initChannel(SocketChannel channel) throws Exception {
-                        System.out.println("===========" + channel);
-                        channel.pipeline()
-                            .addLast(new EchoServerHandler())
-                            .addLast(new HttpRequestDecoder())
-                            .addLast(new HttpResponseDecoder())
-                            .addLast(new HttpObjectAggregator(512 * 1024))
-                        ;
+                    protected void initChannel(Channel channel) throws Exception {
+                        System.out.println("===========");
+                        channel.pipeline().addLast(new EchoServerHandler());
                     }
-                }).option(ChannelOption.SO_BACKLOG, 128) // determining the number of connections queued
-                .childOption(ChannelOption.SO_KEEPALIVE, Boolean.TRUE);
-
+                });
             ChannelFuture f = serverBootstrap.bind().sync();
             System.out.println(EchoServer.class.getName() + " started and listening for connections on " + f.channel().localAddress());
             f.channel().closeFuture().sync();

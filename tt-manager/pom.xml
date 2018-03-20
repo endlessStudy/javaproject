@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>tt-parent</artifactId>
+        <groupId>com.ttao</groupId>
+        <version>1.0-SNAPSHOT</version>
+        <relativePath>../ttparent/pom.xml</relativePath>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>tt-manager</artifactId>
+    <packaging>pom</packaging>
+    <modules>
+        <module>../tt-manager-pojo</module>
+        <module>../tt-manager-mapper</module>
+        <module>../tt-manager-web</module>
+    </modules>
+    <dependencies>
+        <!-- 依赖管理 -->
+        <dependency>
+            <groupId>com.ttao</groupId>
+            <artifactId>tt-common</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+
+    </dependencies>
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.tomcat</groupId>
+                <artifactId>tomcat7-maven-plugin</artifactId>
+                <configuration>
+                    <port>8080</port>
+                    <path>/</path>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+</project>

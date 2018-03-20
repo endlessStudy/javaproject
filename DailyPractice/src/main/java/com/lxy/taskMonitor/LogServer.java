@@ -25,8 +25,7 @@ import static java.util.concurrent.Executors.*;
  */
 public class LogServer {
 
-    private SimpleDateFormat dateFormat =
-        new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+    private SimpleDateFormat dateFormat =  new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 
     /**
      * 将信息记录到日志文件
