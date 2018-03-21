@@ -16,6 +16,7 @@
         <module>../tt-manager-pojo</module>
         <module>../tt-manager-mapper</module>
         <module>../tt-manager-web</module>
+        <module>../tt-manager-service</module>
     </modules>
     <dependencies>
         <!-- 依赖管理 -->

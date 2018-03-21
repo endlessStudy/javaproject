@@ -13,11 +13,7 @@
     <artifactId>tt-manager-web</artifactId>
     <packaging>war</packaging>
     <dependencies>
-        <dependency>
-            <groupId>com.ttao</groupId>
-            <artifactId>tt-manager-service</artifactId>
-            <version>1.0-SNAPSHOT</version>
-        </dependency>
+
         <!-- JSP相关 -->
         <dependency>
             <groupId>jstl</groupId>
