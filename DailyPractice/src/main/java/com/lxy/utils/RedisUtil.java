@@ -1,14 +1,20 @@
 package com.lxy.utils;
 
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.util.Properties;
 import java.util.ResourceBundle;
 
 /**
  * Created by liuyl on 2017/11/21.
  */
 public class RedisUtil {
-        private static ResourceBundle bundle = ResourceBundle.getBundle("props.redis");
+            private static ResourceBundle bundle = ResourceBundle.getBundle("props.redis");
 
         public static String getConfigKey(String key) {
+
             return bundle.getString(key);
         }
 

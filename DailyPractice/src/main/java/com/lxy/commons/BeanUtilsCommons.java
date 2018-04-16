@@ -1,6 +1,5 @@
 package com.lxy.commons;
 
-import org.apache.commons.beanutils.BeanUtils;
 
 /**
  * Created by liuyl on 2018/2/2.

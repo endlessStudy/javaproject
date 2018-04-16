@@ -1,13 +1,8 @@
 package com.lxy;
 
-import org.apache.commons.lang3.ArrayUtils;
-
 import java.io.FileInputStream;
 import java.io.InputStream;
-import java.util.Arrays;
-import java.util.Date;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;
 
 /**
@@ -15,13 +10,6 @@ import java.util.concurrent.ConcurrentHashMap;
  */
 public class Test {
     public static void main(String[] args) {
-        Map<String,String> map = new HashMap<String,String>();
-        map.put("first","1");
-        map.put("second","2");
-        map.put("third","3");
-        for (Map.Entry<String,String> enMap : map.entrySet()){
-            System.out.println(enMap.getKey()+"  :  "+ enMap.getValue());
-        }
-        ConcurrentHashMap concurrentHashMap = new ConcurrentHashMap();
+        System.out.println("46127492@qq.com".matches("^[1-9][0-9]{4,9}@qq\\.com$"));
     }
 }

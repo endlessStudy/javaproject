@@ -6,6 +6,7 @@ import com.eumji.zblog.mapper.ArticleMapper;
 import com.eumji.zblog.service.ArticleService;
 import com.eumji.zblog.vo.ArticleCustom;
 import com.eumji.zblog.vo.Pager;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -20,11 +21,10 @@ import java.util.*;
 @Service
 @Transactional(rollbackFor = Exception.class)
 public class ArticleServiceImpl implements ArticleService {
-
-    @Resource
+    @Autowired
     private ArticleMapper articleMapper;
 
-    @Resource
+    @Autowired
     private BaiduTask baiduTask;
 
     @Override
