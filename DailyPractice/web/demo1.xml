@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="GBK"?>
+<appconfigDefine>
+    <systemDefine CBh="923C9EE4FFF14962B042EC1991672F54" CMc="大数据管理平台门户" CSm="大数据管理平台门户" CXtbs="sjglptmh">
+        <configGroup CBh="8CF8BC7F5C0B434789978FC38FB0C6E0" CBhZxtdy="923C9EE4FFF14962B042EC1991672F54"
+                     CFzbs="sjglptmh.base" CMc="数据源配置" CSm="数据源相关配置" NXssx="1">
+            <configDefine CBh="9C1BB13117414EB7984D6206956A9795" CXtbh="923C9EE4FFF14962B042EC1991672F54"
+                          CFzbh="8CF8BC7F5C0B434789978FC38FB0C6E0" CKey="dataSource.jdbcUrl" CMc="数据源"
+                          CSm="数据管理平台门户所用的数据源" NWh="1" NYx="1" NXssx="1" NXslx="0"/>
+            <configDefine CBh="96483A7326874144A440D9C93BF38B85" CXtbh="923C9EE4FFF14962B042EC1991672F54"
+                          CFzbh="8CF8BC7F5C0B434789978FC38FB0C6E0" CKey="dataSource.user" CMc="用户名"
+                          CSm="数据管理平台门户数据源的用户名" NWh="1" NYx="1" NXssx="2" NXslx="0"/>
+            <configDefine CBh="D7D1E7B4F11D4488941276ACB4CEB8D3" CXtbh="923C9EE4FFF14962B042EC1991672F54"
+                          CFzbh="8CF8BC7F5C0B434789978FC38FB0C6E0" CKey="dataSource.password" CMc="密码"
+                          CSm="数据管理平台门户数据源的密码" NWh="1" NYx="1" NXssx="3" NXslx="0"/>
+            <configDefine CBh="9C328AD4772C41CD8F9A5CEC2AD63288" CXtbh="923C9EE4FFF14962B042EC1991672F54"
+                          CFzbh="8CF8BC7F5C0B434789978FC38FB0C6E0" CKey="artery.system.database" CMc="域名"
+                          CSm="数据管理平台门户表所在域名" NWh="1" NYx="1" NXssx="4" NXslx="0"/>
+        </configGroup>
+    </systemDefine>
+</appconfigDefine>

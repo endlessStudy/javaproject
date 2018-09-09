@@ -16,7 +16,6 @@ import java.util.HashMap;
  *
  */
 public class Utils {
-
     //数字位
     public static char[] chnNumChinese = {'零','一','二','三','四','五','六','七','八','九','壹','贰','叁','肆','伍','陆','柒','捌','玖','两'};
     //节权位
@@ -31,6 +30,7 @@ public class Utils {
     }
 
     private void init() {
+        System.out.println("初始化！");
         int i = 0;
         for(char ch : chnNumChinese){
             if(ch=='两'){
@@ -102,6 +102,7 @@ public class Utils {
     }
 
     public static void main(String[] args) {
-        System.out.println(StringUtils.substring("我ABC汉DEF",0,6));
+        Utils utils = new Utils();
+        utils.CNNum2Arb("100");
     }
 }

@@ -13,15 +13,16 @@ import java.io.IOException;
  */
 public class Send {
     private final static String QUEUE_NAME = "hello";
+
     public static void main(String[] args) throws Exception {
         Logger logger = LoggerFactory.getLogger(Send.class);
         ConnectionFactory connectionFactory = new ConnectionFactory();
         connectionFactory.setHost("172.16.214.53");
         Connection connection = connectionFactory.newConnection();
         Channel channel = connection.createChannel();
-        channel.queueDeclare(QUEUE_NAME,false,false,false,null);
+        channel.queueDeclare(QUEUE_NAME, false, false, false, null);
         String message = "Hello RubbitMQ !";
-        channel.basicPublish("",QUEUE_NAME,null,message.getBytes("UTF-8"));
+        channel.basicPublish("", QUEUE_NAME, null, message.getBytes("UTF-8"));
         logger.info(" [x] Sent '" + message + "'");
         channel.close();
         connection.close();

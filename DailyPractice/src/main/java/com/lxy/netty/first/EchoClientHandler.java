@@ -42,7 +42,7 @@ public class EchoClientHandler extends SimpleChannelInboundHandler<ByteBuf> {
 
     @Override
     public void channelInactive(ChannelHandlerContext ctx) throws Exception {
-       logger.info("^_^ !");
+       logger.info("连接失败！");
     }
 
     @Override
