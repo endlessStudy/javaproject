@@ -29,9 +29,9 @@
 		</param-value>
 	</context-param>
 	<!-- 配置spring监听 注意最好是放在mvc前面,否则有可能报错 -->
-	<listener>
+	<!--<listener>
 		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
-	</listener>
+	</listener>-->
 	<!-- 配置mvc调度器 -->
 	<servlet>
 		<servlet-name>dispatcher</servlet-name>

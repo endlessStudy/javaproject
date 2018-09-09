@@ -8,6 +8,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.Arrays;
 import java.util.List;
+import java.util.concurrent.ConcurrentHashMap;
 
 /**
  * Created by liuyl on 2017/9/14.
@@ -36,6 +37,8 @@ public class ProvinceJudge {
     private static List <String> hbProList = Arrays.asList(hbPro);
     private static int index = 0;
     public static void main(String[] args) {
+        ConcurrentHashMap  concurrentHashMap = new ConcurrentHashMap();
+        concurrentHashMap.put()
         String url = "jdbc:postgresql://172.16.32.221/fb09_hn";
         String username = "artbase";
         String password = "123456";
