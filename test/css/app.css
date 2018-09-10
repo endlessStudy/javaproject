@@ -1,0 +1,135 @@
+body{
+	font-size: 16px;
+}
+
+
+.weui-cells {
+	font-size: 16px;
+}
+
+.weui-btn{
+	font-size: 17px;
+}
+
+.weui-cells__title {
+	font-size: 10px;
+	font-weight: bold;
+}
+.weui-cells__title_feilei {
+	margin-left: 15px;
+	font-size: 10px;
+	font-weight: bold;
+	margin-bottom: 0px;
+}
+
+.weui-cells__title_feilei_tupian {
+	margin-left: 3px;
+	font-size: 10px;
+	font-weight: bold;
+	margin-bottom: 5px;
+}
+.common-btn{
+	margin-top: 10px;
+	margin-left: 5px;
+	margin-right: 10px;
+	margin-bottom: 10px;
+}
+.weui-textarea_wupin{
+
+	height: 45px;
+}
+.icon {
+	width: 26px;
+	height: 26px;
+}
+.icon_wu {
+	width: 48px;
+	height: 48px;
+}
+.img-icon{
+	width: 100%;
+}
+
+.weui-cells{
+	margin-top: 0px;
+}
+
+.weui-cell {
+    padding: 5px 15px;
+}
+
+.weui-cell_wupin {
+    padding: 10px 15px;
+}
+.title
+{
+color:#000000;
+font-size:15px;
+	margin-bottom: 0px;
+}
+.title_wupin
+{
+
+font-size:12px;
+	margin-bottom: 0px;
+	width:48px;
+	text-align: center;
+}
+
+
+.justify{
+        justify-content: center;
+    }
+.align{
+        align-items: center;
+    }
+
+input[type=color], input[type=date], input[type=datetime-local], input[type=datetime], input[type=email], input[type=month], input[type=number], input[type=password], input[type=search], input[type=tel], input[type=text], input[type=time], input[type=url], input[type=week], select, textarea {
+    line-height: 21px;
+    width: 100%;
+    height: 20px;
+    margin-bottom: 1px;
+    padding: 0px 0px;
+    -webkit-user-select: text;
+    border: 0px solid rgba(0,0,0,.2);
+    border-radius: 3px;
+    outline: 0;
+    background-color: #fff;
+    -webkit-appearance: none;
+}
+textarea{
+	height:25px;
+}
+textarea_addr{
+	height:25px;
+}
+textarea_xiangxi{
+	height:65px;
+}
+
+.footer{
+	position:fixed;
+    bottom: 0px;
+  	width:100%;
+    Border:1px solid #ccc;
+    height:65px;
+    background:#ffffff;
+}
+.weui-cells weui-cells_checkbox{
+	width:100%;
+	height:100%;
+}
+/* .weui-cell__bd{
+	text-align: center;
+
+}*/
+.weui-flex__item{
+	width:100%;
+	height:100%;
+}
+.weui-cells_checkbox .weui-cell__hd {
+    padding:0;
+}
+.weui-check__label{
+	padding:5px 0;
+}
