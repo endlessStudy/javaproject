@@ -17,7 +17,7 @@ public class Send {
     public static void main(String[] args) throws Exception {
         Logger logger = LoggerFactory.getLogger(Send.class);
         ConnectionFactory connectionFactory = new ConnectionFactory();
-        connectionFactory.setHost("172.16.214.53");
+        connectionFactory.setHost("127.0.0.1");
         Connection connection = connectionFactory.newConnection();
         Channel channel = connection.createChannel();
         channel.queueDeclare(QUEUE_NAME, false, false, false, null);

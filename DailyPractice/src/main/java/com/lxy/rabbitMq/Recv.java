@@ -13,7 +13,7 @@ public class Recv {
 
     public static void main(String[] args) throws IOException, TimeoutException {
         ConnectionFactory connectionFactory = new ConnectionFactory();
-        connectionFactory.setHost("172.16.214.53");
+        connectionFactory.setHost("127.0.0.1");
         connectionFactory.setPort(ConnectionFactory.DEFAULT_AMQP_PORT);
         Connection connection = connectionFactory.newConnection();
         Channel channel = connection.createChannel();
