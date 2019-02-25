@@ -6,7 +6,7 @@ package com.lxy.designMode.singleton;
  */
 public class HungerSingleton {
     private static final HungerSingleton hungerSingleton = new HungerSingleton();
-    HungerSingleton(){};
+    private HungerSingleton(){};
     public static HungerSingleton getInstance(){
         return hungerSingleton;
     }

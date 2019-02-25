@@ -8,7 +8,7 @@ import java.util.List;
  */
 public class LazySingleton {
     private static LazySingleton lazySingleton = null;
-    LazySingleton(){};
+    private LazySingleton(){};
     public static LazySingleton getInstance(){
         if (lazySingleton == null) {
             lazySingleton = new LazySingleton();

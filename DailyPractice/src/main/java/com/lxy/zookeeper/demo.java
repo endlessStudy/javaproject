@@ -23,7 +23,7 @@ public class demo {
 
     // 初始化 ZooKeeper 实例
     private void createZKInstance() throws IOException {
-        zk = new ZooKeeper("120.79.4.109:2181", demo.SESSION_TIMEOUT, this.watcher);
+        zk = new ZooKeeper("120.79.4.109:80", demo.SESSION_TIMEOUT, this.watcher);
     }
 
     private void ZKOperations() throws IOException, InterruptedException, KeeperException {
