@@ -1,12 +1,10 @@
-package com.lxy.rabbitMq;
+package com.lxy.mq.rabbitMq;
 
 import com.rabbitmq.client.Channel;
 import com.rabbitmq.client.Connection;
 import com.rabbitmq.client.ConnectionFactory;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
-import java.io.IOException;
 
 /**
  * Created by liuyl on 2018/1/29.

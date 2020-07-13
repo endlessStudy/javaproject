@@ -11,7 +11,7 @@ import java.util.ResourceBundle;
  * Created by liuyl on 2017/11/21.
  */
 public class RedisUtil {
-            private static ResourceBundle bundle = ResourceBundle.getBundle("props.redis");
+            private static ResourceBundle bundle = ResourceBundle.getBundle("prop.redis");
 
         public static String getConfigKey(String key) {
 

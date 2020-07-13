@@ -13,10 +13,6 @@ import java.lang.reflect.Method;
 import java.util.Arrays;
 
 /**
- * Created by liuyl on 2018/1/15.
- */
-
-/**
  *
  *
  *
@@ -55,10 +51,12 @@ public class EchoServer {
 
     public void start() throws Exception {
         EventLoopGroup eventLoopGroup = new NioEventLoopGroup();
+        EventLoopGroup workEventLoopGroup = new NioEventLoopGroup();
+
         try {
             //服务启动程序
             ServerBootstrap serverBootstrap = new ServerBootstrap();
-            serverBootstrap.group(eventLoopGroup)
+            serverBootstrap.group(eventLoopGroup,workEventLoopGroup)
                 .channel(NioServerSocketChannel.class)
                 .localAddress(port)
                 .childHandler(new ChannelInitializer<Channel>() {

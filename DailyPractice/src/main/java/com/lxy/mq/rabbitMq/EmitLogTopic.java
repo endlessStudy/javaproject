@@ -1,4 +1,4 @@
-package com.lxy.rabbitMq;
+package com.lxy.mq.rabbitMq;
 
 import com.rabbitmq.client.BuiltinExchangeType;
 import com.rabbitmq.client.ConnectionFactory;

@@ -59,8 +59,7 @@ public class EchoClient {
                 }
             });
             channelFuture.channel().closeFuture().sync();
-        } finally {
-            eventLoopGroup.shutdownGracefully().sync();
+        } finally { eventLoopGroup.shutdownGracefully().sync();
         }
     }
 

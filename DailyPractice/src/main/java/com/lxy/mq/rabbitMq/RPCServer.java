@@ -1,4 +1,4 @@
-package com.lxy.rabbitMq;
+package com.lxy.mq.rabbitMq;
 
 import com.rabbitmq.client.ConnectionFactory;
 import com.rabbitmq.client.Connection;
@@ -9,7 +9,6 @@ import com.rabbitmq.client.AMQP;
 import com.rabbitmq.client.Envelope;
 
 import java.io.IOException;
-import java.util.concurrent.TimeoutException;
 
 public class RPCServer {
 

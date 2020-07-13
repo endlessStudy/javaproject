@@ -1,12 +1,12 @@
-package com.lxy.rabbitMq;
+package com.lxy.mq.rabbitMq;
 
 import com.rabbitmq.client.*;
 
 import java.io.IOException;
 
-public class ReceiveLogsDirect {
+public class ReceiveLogsTopic {
 
-  private static final String EXCHANGE_NAME = "direct_logs";
+  private static final String EXCHANGE_NAME = "topic_logs";
 
   public static void main(String[] argv) throws Exception {
     ConnectionFactory factory = new ConnectionFactory();
@@ -14,17 +14,18 @@ public class ReceiveLogsDirect {
     Connection connection = factory.newConnection();
     Channel channel = connection.createChannel();
 
-    channel.exchangeDeclare(EXCHANGE_NAME, BuiltinExchangeType.DIRECT);
+    channel.exchangeDeclare(EXCHANGE_NAME, BuiltinExchangeType.TOPIC);
     String queueName = channel.queueDeclare().getQueue();
 
-    if (argv.length < 1){
-      System.err.println("Usage: ReceiveLogsDirect [info] [warning] [error]");
+    if (argv.length < 1) {
+      System.err.println("Usage: ReceiveLogsTopic [binding_key]...");
       System.exit(1);
     }
 
-    for(String severity : argv){
-      channel.queueBind(queueName, EXCHANGE_NAME, severity);
+    for (String bindingKey : argv) {
+      channel.queueBind(queueName, EXCHANGE_NAME, bindingKey);
     }
+
     System.out.println(" [*] Waiting for messages. To exit press CTRL+C");
 
     Consumer consumer = new DefaultConsumer(channel) {
