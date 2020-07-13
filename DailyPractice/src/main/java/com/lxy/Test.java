@@ -11,8 +11,14 @@ import java.util.concurrent.ConcurrentHashMap;
  */
 
 public class Test {
+    static Integer i = 222;
     public static void main(String[] args) {
-        System.out.println("46127492@qq.com".matches("^[1-9][0-9]{4,9}@qq\\.com$"));
+        change(i);
+        System.out.println(i);
+    }
+    public static void change(int str ) {
+
+        ++str;
     }
 
     @org.junit.Test
