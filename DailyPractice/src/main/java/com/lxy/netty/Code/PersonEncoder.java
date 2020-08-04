@@ -9,10 +9,10 @@ import io.netty.handler.codec.MessageToByteEncoder;
  * Created by liuyl on 2018/4/9.
  */
 public class PersonEncoder extends MessageToByteEncoder<Person> {
-    @Override
-    protected void encode(ChannelHandlerContext ctx, Person msg, ByteBuf out) throws Exception {
-        byte[] datas = ByteObjConverter.ObjectToByte(msg);
-        out.writeBytes(datas);
-        ctx.flush();
-    }
+	@Override
+	protected void encode(ChannelHandlerContext ctx, Person msg, ByteBuf out) throws Exception {
+		byte[] datas = ByteObjConverter.ObjectToByte(msg);
+		out.writeBytes(datas);
+		ctx.flush();
+	}
 }

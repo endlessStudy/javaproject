@@ -1,89 +1,47 @@
 package com.lxy;
 
-import java.io.FileInputStream;
-import java.io.InputStream;
-import java.sql.SQLOutput;
-import java.util.*;
-import java.util.concurrent.ConcurrentHashMap;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 /**
  * Created by liuyl on 2018/1/31.
  */
 
 public class Test {
-    static Integer i = 222;
-    public static void main(String[] args) {
-        change(i);
-        System.out.println(i);
-    }
-    public static void change(int str ) {
+	public static final int PARAM = 1;
 
-        ++str;
-    }
+	public Test() {
+		System.out.print("默认构造方法！--");
+	}
 
-    @org.junit.Test
-    public void fun02() {
-        int count1 = 0, count2 = 0;
-        for (int i = 0; i <= 200; i++) {
-            // 每一个数一个个接受检验是否为素数
-            for (int j = 2; j <= Math.sqrt(i); j++) {
-                if (i % j != 0) {
-                    //不能被整除累计一次
-                    count1++;
-                }
-            }
-            // 转为int的类型
-            int num = (int) Math.sqrt(i);
-            //如果累计次数num - 1个数相等则为素数
-            if (count1 == (num - 1)) {
-                System.out.println("素数:" + i);
-                count2++;
-            }
-            // 统计素数个数
-            count1 = 0;
-        }
-        System.out.println(count2);
-    }
+	//非静态代码块
+	{
+		System.out.print("非静态代码块！--");
+	}
 
-    @org.junit.Test
-    public void test() {
-        int a = 0, b = 200;
-        int count = 0;
-        boolean flag;
-       int c = a > 1 ? a  : 2;
-        for (int i = c; i <= b; i++) {
-            flag = true;
-            for (int j = 2; j <= Math.sqrt(i); j++) {
-                if (i % j == 0) {
-                    flag = false;
-                    break;
-                }
-            }
-            if (flag) {
-                count++;
-                System.out.println("质数：" + i);
-            }
-        }
-        System.out.println(count);
-    }
+	//静态代码块
+	static {
+		System.out.print("静态代码块！--");
+	}
 
-    int count = 3;
-    @org.junit.Test
-    public void test2(){
-        int a =  100000;
-        count += 1;
-        System.out.println(count);
-        count =+ 1;
-        System.out.println(count);
-    }
-    public int add(int i){
-        if (i > 0) {
-            count = count + i;
-            i--;
-            return add(i);
-        }else {
-            return count;
-        }
-    }
+	public static void test() {
+		System.out.print("静态方法中的内容! --");
+		{
+			System.out.print("静态方法中的代码块！--");
+		}
 
+	}
+
+	public static void main(String[] args) {
+		// Test test = new Test();
+		Test.test();//静态代码块！--静态方法中的内容! --静态方法中的代码块！--
+		// test.test();
+		List<String> list = new ArrayList<>();
+		int[] arr = {1, 2, 3, 4, 5, 6, 7, 8, 9, 0};
+		int[] targetArr = new int[4];
+		System.arraycopy(arr, 1, targetArr, 0, targetArr.length);
+		Arrays.stream(targetArr).forEach(System.out::print);
+
+	}
 }

@@ -7,15 +7,15 @@ import com.lxy.ehcache.entity.SystemLog;
  */
 public interface SystemLogService {
 
-    int deleteSystemLog(String id);
+	int deleteSystemLog(String id);
 
-    int insert(SystemLog record);
+	int insert(SystemLog record);
 
-    int insertTest(SystemLog record);
+	int insertTest(SystemLog record);
 
-    SystemLog findSystemLog(String id);
+	SystemLog findSystemLog(String id);
 
-    int updateSystemLog(SystemLog record);
+	int updateSystemLog(SystemLog record);
 
-    int count();
+	int count();
 }

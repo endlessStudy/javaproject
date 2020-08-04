@@ -8,16 +8,16 @@ import java.util.concurrent.ConcurrentHashMap;
  */
 public class ExceptionDemo {
 
-    public static void main(String[] args) {
-        String dataNames;
+	public static void main(String[] args) {
+		String dataNames;
 
-        Map<String, String> map = new HashMap<String, String>();
-        ConcurrentHashMap concurrentHashMap = new ConcurrentHashMap();
-        Map map1 = new Hashtable();
-        concurrentHashMap.put("key","value");
-        map.keySet();
-        for (Map.Entry me : map.entrySet()) {
-        }
+		Map<String, String> map = new HashMap<String, String>();
+		ConcurrentHashMap concurrentHashMap = new ConcurrentHashMap();
+		Map map1 = new Hashtable();
+		concurrentHashMap.put("key", "value");
+		map.keySet();
+		for (Map.Entry me : map.entrySet()) {
+		}
 
-    }
+	}
 }

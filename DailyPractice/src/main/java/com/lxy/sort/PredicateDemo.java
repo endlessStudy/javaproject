@@ -10,9 +10,9 @@ import java.util.function.Predicate;
  * @date 2018-11-27
  */
 public class PredicateDemo {
-    public static void main(String[] args) {
-        Predicate<Integer> preDestroy = age -> age > 18;
-        boolean test = preDestroy.test(19);
-        System.out.println(test);
-    }
+	public static void main(String[] args) {
+		Predicate<Integer> preDestroy = age -> age > 18;
+		boolean test = preDestroy.test(19);
+		System.out.println(test);
+	}
 }

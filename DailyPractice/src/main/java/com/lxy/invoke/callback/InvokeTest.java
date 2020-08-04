@@ -8,15 +8,15 @@ import java.lang.reflect.Method;
  * @description
  */
 public class InvokeTest {
-    public static void main(String[] args) throws Exception {
-        Class<?> clz = Class.forName("com.lxy.invoke.callback.Atest");
-        Object o = clz.newInstance();
-        Method m = clz.getMethod("foo", String.class);
-        for (int i = 0; i < 16; i++) {
-            m.invoke(o, Integer.toString(i));
-        }
+	public static void main(String[] args) throws Exception {
+		Class<?> clz = Class.forName("com.lxy.invoke.callback.Atest");
+		Object o = clz.newInstance();
+		Method m = clz.getMethod("foo", String.class);
+		for (int i = 0; i < 16; i++) {
+			m.invoke(o, Integer.toString(i));
+		}
 
-    }
+	}
 }
 
 

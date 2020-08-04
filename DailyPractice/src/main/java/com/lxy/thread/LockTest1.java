@@ -12,15 +12,15 @@ import java.util.concurrent.locks.ReentrantLock;
  * @date 2018-12-03
  */
 public class LockTest1 {
-    public static void main(String[] args) {
-        Lock lock = new ReentrantLock();
-        Condition condition = lock.newCondition();
-        try {
-            lock.wait();
-            condition.await();
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
+	public static void main(String[] args) {
+		Lock lock = new ReentrantLock();
+		Condition condition = lock.newCondition();
+		try {
+			lock.wait();
+			condition.await();
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
 
-    }
+	}
 }

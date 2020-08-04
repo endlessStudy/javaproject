@@ -50,7 +50,7 @@ public class ValidBracket {
 					return false;
 				}
 				String lastChar = charList.remove(size);
-				if (!lastChar.equals(c) ) {
+				if (!lastChar.equals(c)) {
 					return false;
 				}
 			}

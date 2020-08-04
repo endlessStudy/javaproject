@@ -5,11 +5,16 @@ package com.lxy.designMode.singleton;
  * 静态内部类方法
  */
 public class StaticSingleton {
-    private static class LoadSingleton{
-        private static StaticSingleton staticSingleton = new StaticSingleton();
-    }
-    private StaticSingleton(){};
-    public static StaticSingleton getInstance(){
-        return LoadSingleton.staticSingleton;
-    }
+	private static class LoadSingleton {
+		private static StaticSingleton staticSingleton = new StaticSingleton();
+	}
+
+	private StaticSingleton() {
+	}
+
+	;
+
+	public static StaticSingleton getInstance() {
+		return LoadSingleton.staticSingleton;
+	}
 }
