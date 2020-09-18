@@ -25,7 +25,6 @@ public class QueueForStack {
 	private final Deque<Integer> queue = new ArrayDeque<>();
 
 	public QueueForStack() {
-
 	}
 
 

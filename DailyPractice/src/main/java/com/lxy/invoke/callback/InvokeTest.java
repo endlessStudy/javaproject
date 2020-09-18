@@ -13,7 +13,7 @@ public class InvokeTest {
 		Object o = clz.newInstance();
 		Method m = clz.getMethod("foo", String.class);
 		for (int i = 0; i < 16; i++) {
-			m.invoke(o, Integer.toString(i));
+			m.invoke(o, String.valueOf(i));
 		}
 
 	}
